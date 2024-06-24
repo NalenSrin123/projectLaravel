@@ -79,7 +79,7 @@
                                 </div>
                             </figure>
                         </div>
-                       
+
                     @endforeach
                 </div>
             </div>
