@@ -72,7 +72,9 @@
                 </div>
             </div>
         </div>
-
+        <div class="mx-5 mt-5">
+            {{$product->links()}}
+        </div>
     </section>
 
 </main>

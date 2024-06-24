@@ -12,7 +12,7 @@ class shopController extends Controller
         $product=Product::query()
                         ->orderBy('id','DESC')
                         ->limit(8)
-                        ->get();
+                        ->paginate(6);
 
         return view('frontend.shop',compact('product'));
     }
@@ -22,7 +22,7 @@ class shopController extends Controller
                     ->join('categories','products.cate_id','=','categories.id')
                     ->select('products.*','categories.name AS category')
                     ->where('categories.name','Man')
-                    ->get();
+                    ->paginate(6);
         return view('frontend.shop',compact('product'));
     }
     public function getByWoman(){
@@ -31,7 +31,7 @@ class shopController extends Controller
                     ->join('categories','products.cate_id','=','categories.id')
                     ->select('products.*','categories.name AS category')
                     ->where('categories.name','Woman')
-                    ->get();
+                    ->paginate(6);
         return view('frontend.shop',compact('product'));
     }
     public function getByBoy(){
@@ -40,7 +40,7 @@ class shopController extends Controller
                     ->join('categories','products.cate_id','=','categories.id')
                     ->select('products.*','categories.name AS category')
                     ->where('categories.name','Boy')
-                    ->get();
+                    ->paginate(6);
         return view('frontend.shop',compact('product'));
     }
     public function getByGirl(){
@@ -49,28 +49,28 @@ class shopController extends Controller
                     ->join('categories','products.cate_id','=','categories.id')
                     ->select('products.*','categories.name AS category')
                     ->where('categories.name','Girl')
-                    ->get();
+                    ->paginate(6);
         return view('frontend.shop',compact('product'));
     }
     public function getByHighPrice(){
         $product=Product::query()
                         ->orderBy('sale_price','DESC')
                         ->limit(4)
-                        ->get();
+                        ->paginate(6);
         return view('frontend.shop',compact('product'));
     }
     public function getByLowPrice(){
         $product=Product::query()
                         ->orderBy('sale_price','ASC')
                         ->limit(4)
-                        ->get();
+                        ->paginate(6);
         return view('frontend.shop',compact('product'));
     }
     public function promotionProduct(){
         $product=Product::query()
                         ->orderBy('id','DESC')
                         ->where('regular_price','!=',0)
-                        ->get();
+                        ->paginate(6);
         return view('frontend.shop',compact('product'));
     }
 }

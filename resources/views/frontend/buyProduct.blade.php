@@ -154,8 +154,10 @@ background-color: #4285f4;
                       <a href="#!" class="float-end text-black"><i class="fas fa-times"></i></a>
                       <h5 class="text-primary">{{$product->proName}}</h5>
                       <h6 style="color: #9e9e9e;">Color:{{$product->color}}</h6>
+                      <p class="fw-bold mb-0 me-5 pe-3">Reqular Price : $ {{$product->regular_price}}</p>
                       <div class="d-flex align-items-center">
-                        <p class="fw-bold mb-0 me-5 pe-3">Price : $ {{$product->sale_price}}</p>
+
+                        <p class="fw-bold mb-0 me-5 pe-3">Sale Price : $ {{$product->sale_price}}</p>
                         <form action="" method="POST">
                             @csrf
                             <div class="def-number-input number-input safari_only">
