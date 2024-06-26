@@ -10,6 +10,8 @@ use App\Http\Controllers\frontend\homeController;
 use App\Http\Controllers\frontend\newsController as FrontendNewsController;
 use App\Http\Controllers\frontend\productController as FrontendProductController;
 use App\Http\Controllers\frontend\shopController;
+use App\Http\Controllers\frontend\userController as FrontendUserController;
+use App\Models\Shopping;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -98,16 +100,15 @@ Route::controller(FrontendNewsController::class)->group(function(){
 });
 Route::controller(shopController::class)->group(function(){
     Route::get('/shop','getShop')->name('shop');
-    Route::get('/get-by-man','getByMan')->name('get-by-man');
-    Route::get('/get-by-woman','getByWoman')->name('get-by-woman');
-    Route::get('/get-by-boy','getByBoy')->name('get-by-boy');
-    Route::get('/get-by-girl','getByGirl')->name('get-by-girl');
-    Route::get('/get-by-high-price','getByHighPrice')->name('get-by-high-price');
-    Route::get('/get-by-low-price','getByLowPrice')->name('get-by-low-price');
-    Route::get('/promotion-product','promotionProduct')->name('promotion-product');
 });
 Route::controller(homeController::class)->group(function(){
     Route::get('/','getAllPro')->name('getall');
+});
+Route::controller(FrontendUserController::class)->group(function(){
+    Route::get('/frontend-login','FrontendLogin')->name('frontend-login');
+    Route::post('/frontend-login-submit','FrontendLoginSubmit')->name('frontend-login-submit');
+    Route::get('/frontend-register','FrontendRegister')->name('frontend-register');
+    Route::post('/frontend-register-submit','FrontendRegisterSubmit')->name('frontend-register-submit');
 });
 Route::get('/news',function(){
     return view('frontend.news');

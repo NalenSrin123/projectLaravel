@@ -2,6 +2,8 @@
 @section('title')
     Register
 @endsection
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <style>
     .container-fluid{
         height: 100vh;
@@ -11,6 +13,26 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .card-body{
+        position: relative;
+    }
+    .btn-cancel{
+        position: absolute;
+        top:0;
+        right:0px;
+        padding: 5px;
+        border-radius: 3px
+    }
+    .btn-cancel a i{
+        font-size: 20px;
+        color: black
+    }
+    .btn-cancel:hover{
+        background-color: red
+    }
+    .btn-cancel:hover a i{
+        color: #fff;
     }
 </style>
 @section('content')
@@ -22,12 +44,14 @@
             <!-- Register -->
             <div class="card">
               <div class="card-body">
-
+                <div class="btn-cancel">
+                    <a href="{{route('getall')}}"><i class="fa-solid fa-xmark"></i></a>
+                </div>
                 @if (Session::has('message'))
                     <p class="text-danger text-center">{{ Session::get('message') }}</p>
                 @endif
 
-                <form id="formAuthentication" class="mb-3" action="{{route('signup-submit')}}" method="POST" enctype="multipart/form-data">
+                <form id="formAuthentication" class="mb-3" action="{{route('frontend-register-submit')}}" method="POST" enctype="multipart/form-data">
                   @csrf
                   <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
@@ -68,7 +92,7 @@
 
                 <p class="text-center">
                   <span>Already have an account?</span>
-                  <a href="/signin">
+                  <a href="{{route('frontend-login')}}">
                     <span>Sign in instead</span>
                   </a>
                 </p>

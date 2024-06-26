@@ -20,7 +20,7 @@ class productController extends Controller
         return view('frontend.product',compact('product','relateProduct'));
     }
     public function buyProduct(Product $product,Request $request){
-        
+
         if ($product->regular_price == 0) {
             $discountAmount = 0;
         } else {
@@ -39,9 +39,7 @@ class productController extends Controller
 
     }
     public function buyProductSubmit(Product $product){
-        $id=$product->id;
-
-        return redirect('/buy-product/'.$id)->with('message','Buy product success');
+        return redirect('/shopping');
     }
 
     public function searchProduct(Request $request)

@@ -29,7 +29,7 @@
                         <a href="{{route('get-news')}}">NEWS</a>
                     </li>
                 </ul>
-                <div class="search">
+                <div class="search d-flex gap-4">
                     <form action="{{route('search-product')}}" method="get">
                         <input type="text" name="search" class="box" placeholder="SEARCH HERE">
                         <button>
@@ -43,6 +43,7 @@
                             "></div>
                         </button>
                     </form>
+                    <a href="{{route('frontend-login')}}" class="btn btn-primary">LOGIN</a>
                 </div>
             </div>
         </header>

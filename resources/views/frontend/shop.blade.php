@@ -66,11 +66,11 @@
 
                 </div>
             </div>
+            <div class="mx-5 mt-5">
+               {{$products->links();}}
+            </div>
+        </div>
 
-        </div>
-        <div class="mx-5 mt-5">
-            {{$products->links()}}
-        </div>
     </section>
 
 </main>

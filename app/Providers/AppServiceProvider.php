@@ -22,13 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot() :void
     {
-        // View::composer('frontend.layout',function($view){
-        //     $logo=Logo::query()
-        //             ->orderBy('id','DESC')
-        //             ->first();
-
-        //      $view->with('logo',$logo);
-        // });
         view()->composer('frontend.layout',function($view){
             $logo=Logo::query()
                     ->orderBy('id','DESC')

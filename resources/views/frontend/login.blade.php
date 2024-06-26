@@ -2,6 +2,7 @@
 @section('title')
     Login
 @endsection
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
     .container-fluid{
         height: 100vh;
@@ -11,6 +12,26 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .card-body{
+        position: relative;
+    }
+    .btn-cancel{
+        position: absolute;
+        top:0;
+        right:0px;
+        padding: 5px;
+        border-radius: 3px
+    }
+    .btn-cancel a i{
+        font-size: 20px;
+        color: black
+    }
+    .btn-cancel:hover{
+        background-color: red
+    }
+    .btn-cancel:hover a i{
+        color: #fff;
     }
 </style>
 @section('content')
@@ -22,13 +43,16 @@
             <!-- Register -->
             <div class="card">
               <div class="card-body">
+                <div class="btn-cancel">
+                    <a href="{{route('getall')}}"><i class="fa-solid fa-xmark"></i></a>
+                </div>
                 <!-- Logo -->
 
                 @if (Session::has('message'))
                     <p class="text-danger text-center">{{ Session::get('message') }}</p>
                 @endif
 
-                <form id="formAuthentication" class="mb-3" action="{{route('signin-submit')}}" method="POST">
+                <form id="formAuthentication" class="mb-3" action="{{route('frontend-login-submit')}}" method="POST">
                   @csrf
                   <div class="mb-3">
                     <label for="email" class="form-label">Email or Username</label>
@@ -75,7 +99,7 @@
 
                 <p class="text-center">
                   <span>New on our platform?</span>
-                  <a href="{{route('signup')}}">
+                  <a href="{{route('frontend-register')}}">
                     <span>Create an account</span>
                   </a>
                 </p>
