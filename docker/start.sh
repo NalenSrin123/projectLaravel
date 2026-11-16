@@ -1,3 +1,4 @@
+
 #!/bin/sh
 set -e
 
@@ -17,6 +18,8 @@ fi
 
 php artisan config:cache
 
-echo "Starting FrankenPHP..."
+echo "Starting Laravel server..."
 
-exec frankenphp run --config /etc/caddy/Caddyfile
+exec php artisan serve \
+    --host=0.0.0.0 \
+    --port="${PORT:-10000}"
