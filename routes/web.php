@@ -41,7 +41,7 @@ Route::controller(userController::class)->group(function(){
     Route::post('/edit-profile-submit/{user}','editProfileSubmit')->name('edit-profile-submit');
 
 });
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('/admin',function(){
         return view('Backend.master');
     });

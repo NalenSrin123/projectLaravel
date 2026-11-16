@@ -40,11 +40,12 @@ class userController extends Controller
             'name_email'=>'required',
             'password'=>'required'
         ]);
-        if(Auth::attempt(['name' => $request->name_email,'password' =>$request->password])){
-            return redirect('/');
-        }elseif(Auth::attempt(['email'=>$request->name_email, 'password' => $request->password])){
-            return redirect('/');
-        }else {
+        if (Auth::attempt(['name' => $request->name_email, 'password' => $request->password])
+            || Auth::attempt(['email' => $request->name_email, 'password' => $request->password])) {
+            return Auth::user()->role === 'admin'
+                ? redirect('/admin')
+                : redirect()->route('getall');
+        } else {
             return redirect('/frontend-login');
         }
     }

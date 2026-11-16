@@ -32,7 +32,7 @@
                     </li>
                 </ul>
                 <div class="search d-flex gap-4">
-                    <form action="{{route('search-product')}}" method="get">
+                    <form class="search-form" action="{{route('search-product')}}" method="get">
                         <input type="text" name="search" class="box" placeholder="SEARCH HERE">
                         <button>
                             <div style="background-image: url('{{ asset('search.png') }}');

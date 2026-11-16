@@ -75,12 +75,12 @@ header .search .box {
 header .search .box:focus-visible {
     outline: none;
 }
-header .search form {
+header .search .search-form {
     display: flex;
     align-items: center;
     position: relative;
 }
-header .search form button {
+header .search .search-form button {
     right: -2px;
     position: absolute;
     border: transparent;
@@ -316,7 +316,7 @@ body .pagination .page-item.disabled .page-link {
         gap: 12px !important;
     }
 
-    header .search form {
+    header .search .search-form {
         flex: 1;
     }
 
