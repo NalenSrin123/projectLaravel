@@ -1,4 +1,4 @@
-@extends('backend.master')
+@extends('Backend.master')
 @section('content')
 
     @section('site-title')

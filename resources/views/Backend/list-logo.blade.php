@@ -1,4 +1,4 @@
-@extends('backend.master')
+@extends('Backend.master')
 @section('content')
 <div class="content-wrapper">
     @section('site-title')
