@@ -56,7 +56,9 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL', '/'),
+    // Only accept a complete asset base URL. This prevents a deployment
+    // platform from treating an unexpanded value such as ${APP_URL} as a path.
+    'asset_url' => filter_var(env('ASSET_URL'), FILTER_VALIDATE_URL) ?: null,
 
     /*
     |--------------------------------------------------------------------------
