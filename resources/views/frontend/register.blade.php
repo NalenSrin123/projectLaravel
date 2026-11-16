@@ -7,9 +7,6 @@
 <style>
     .container-fluid{
         height: 100vh;
-        background-image: url('back1.jpg');
-        background-size: cover;
-        background-position: center;
         display: flex;
         align-items: center;
         justify-content: center;
