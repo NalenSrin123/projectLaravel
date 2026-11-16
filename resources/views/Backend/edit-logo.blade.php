@@ -22,7 +22,9 @@
                                 <div class="mb-3 col-12">
                                         <label for="thumbnail">Logo</label>
                                         <input type="file" name="thumbnail" id="" class="form-control">
-                                        <img class="mt-2"  width="80px" src="{{url('images/',$logo->thumbnail)}}" alt="">
+                                        @if (filled($logo->thumbnail))
+                                            <img class="mt-2" width="80" src="{{ asset('images/' . $logo->thumbnail) }}" alt="Logo">
+                                        @endif
                                         <input name="old_image" type="hidden" value="{{$logo->thumbnail}}">
 
                                 </div>

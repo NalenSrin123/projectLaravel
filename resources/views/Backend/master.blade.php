@@ -17,31 +17,31 @@
     <title>@yield('site-title')</title>
     <meta name="description" content="" />
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('backend/img/favicon/favicon.ico') }}" />
     <!-- Fonts -->
-    <link rel="preconnect" href="{{url('https://fonts.googleapis.com')}}" />
-    <link rel="preconnect" href="{{url('https://fonts.gstatic.com')}}" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="{{url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap')}}"
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="{{url('backend/vendor/fonts/boxicons.css')}}" />
+    <link rel="stylesheet" href="{{ asset('backend/vendor/fonts/boxicons.css') }}" />
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{{url('backend/vendor/css/core.css')}}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{url('backend/vendor/css/theme-default.css')}}" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="{{url('backend/css/demo.css')}}" />
+    <link rel="stylesheet" href="{{ asset('backend/vendor/css/core.css') }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('backend/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('backend/css/demo.css') }}" />
 
     {{-- Select2 --}}
-    <link rel="stylesheet" href="{{url('https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
 
     {{-- Jquery --}}
-    <script src="{{url('https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{url('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" />
-    <script src="{{url('backend/vendor/js/helpers.js')}}"></script>
-    <script src="{{url('backend/js/config.js')}}"></script>
+    <link rel="stylesheet" href="{{ asset('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    <script src="{{ asset('backend/vendor/js/helpers.js') }}"></script>
+    <script src="{{ asset('backend/js/config.js') }}"></script>
 
   </head>
   <body>
@@ -259,7 +259,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                 <div class="avatar avatar-online">
-                      <img src="{{url('images/',Auth::User()->profile)}}" alt class="w-px-45 h-px-45 rounded-circle" />
+                      <img src="{{ filled(Auth::user()->profile) ? asset('images/' . Auth::user()->profile) : asset('backend/img/avatars/1.png') }}" alt="Profile" class="w-px-45 h-px-45 rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -268,7 +268,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="{{url('images/',Auth::User()->profile)}}" alt class="w-px-40 h-px-40 rounded-circle" />
+                              <img src="{{ filled(Auth::user()->profile) ? asset('images/' . Auth::user()->profile) : asset('backend/img/avatars/1.png') }}" alt="Profile" class="w-px-40 h-px-40 rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -312,26 +312,26 @@
     <!-- build:js assets/vendor/js/core.js -->
     {{-- <script src="{{url('backend/vendor/libs/jquery/jquery.js')}}"></script>
     <script src="{{url('backend/vendor/libs/popper/popper.js')}}"></script> --}}
-    <script src="{{url('backend/vendor/js/bootstrap.js')}}"></script>
-    <script src="{{url('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+    <script src="{{ asset('backend/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 
-    <script src="{{url('backend/vendor/js/menu.js')}}"></script>
+    <script src="{{ asset('backend/vendor/js/menu.js') }}"></script>
     <!-- endbuild -->
 
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="{{url('backend/js/main.js')}}"></script>
-    <script src="{{url('backend/js/theme.js')}}"></script>
+    <script src="{{ asset('backend/js/main.js') }}"></script>
+    <script src="{{ asset('backend/js/theme.js') }}"></script>
 
     {{-- select2 --}}
-    <script src="{{url('https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <!-- Page JS -->
-    <script src="{{url('backend/js/form-basic-inputs.js')}}"></script>
+    <script src="{{ asset('backend/js/form-basic-inputs.js') }}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="{{url('https://buttons.github.io/buttons.js')}}"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>

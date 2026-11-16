@@ -27,7 +27,9 @@ NL SHOPPING
             <div class="row">
                 <div class="col-5">
                     <div class="image">
-                        <img src="{{url('images/'.$news->image)}}" alt="">
+                        @if (filled($news->image))
+                            <img src="{{ asset('images/' . $news->image) }}" alt="{{ $news->title }}">
+                        @endif
                     </div>
                 </div>
                 <div class="col-7">
@@ -60,7 +62,9 @@ NL SHOPPING
                     <figure>
                         <div class="thumbnail">
                             <a href="{{route('news-detail',$item->id)}}">
-                                <img src="{{url('images/',$item->image)}}" alt="">
+                                @if (filled($item->image))
+                                    <img src="{{ asset('images/' . $item->image) }}" alt="{{ $item->title }}">
+                                @endif
                             </a>
                         </div>
                         <div class="detail">

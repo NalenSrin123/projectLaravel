@@ -12,7 +12,12 @@ class TrustProxies extends Middleware
      *
      * @var array<int, string>|string|null
      */
-    protected $proxies;
+    /**
+     * Render terminates TLS before forwarding requests to the container.
+     * The public service is reachable through Render's proxy, so its
+     * X-Forwarded-* headers are the source of the original request scheme.
+     */
+    protected $proxies = '*';
 
     /**
      * The headers that should be used to detect proxies.

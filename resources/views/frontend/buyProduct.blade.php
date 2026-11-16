@@ -147,8 +147,10 @@ background-color: #4285f4;
 
                   <div class="d-flex align-items-center mb-5">
                     <div class="flex-shrink-0">
-                      <img src="{{url('images/'.$product->thumbnail)}}"
-                        class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
+                      @if (filled($product->thumbnail))
+                        <img src="{{ asset('images/' . $product->thumbnail) }}"
+                          class="img-fluid" style="width: 150px;" alt="{{ $product->proName }}">
+                      @endif
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <a href="#!" class="float-end text-black"><i class="fas fa-times"></i></a>
@@ -192,7 +194,7 @@ background-color: #4285f4;
                   <form action="{{route('buy-product-submit',$product->id)}}" class="mb-5" method="post">
                     @csrf
                     <div class="row" style="margin-left: 200px">
-                        <img src="/code.jpg" alt=""  style="width: 200px;">
+                        <img src="{{ asset('code.jpg') }}" alt="Payment QR code" style="width: 200px;">
                     </div>
 
                     <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block btn-lg"  class="btn right-auto" style="margin-left: 400px; margin-top: 50px">Buy now</button>

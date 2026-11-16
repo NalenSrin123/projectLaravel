@@ -29,7 +29,9 @@
 
                     <td>
                         <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                           <img width="60" src="{{url('images/',$item->image)}}" alt="Avatar" >
+                           @if (filled($item->image))
+                             <img width="60" src="{{ asset('images/' . $item->image) }}" alt="{{ $item->title }}">
+                           @endif
                         </ul>
                       </td>
 

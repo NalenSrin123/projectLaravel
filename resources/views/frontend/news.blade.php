@@ -19,7 +19,9 @@
                         <figure>
                             <div class="thumbnail">
                                 <a href="{{route('news-detail',$item->id)}}">
-                                    <img src="{{url('images/',$item->image)}}" alt="">
+                                    @if (filled($item->image))
+                                        <img src="{{ asset('images/' . $item->image) }}" alt="{{ $item->title }}">
+                                    @endif
                                 </a>
                             </div>
                             <div class="detail">

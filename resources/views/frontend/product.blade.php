@@ -10,7 +10,9 @@ NL SHOPPING
             <div class="row">
                 <div class="col-5">
                     <div class="thumbnail">
-                        <img src="{{url('images/'.$product->thumbnail)}}" alt="">
+                        @if (filled($product->thumbnail))
+                            <img src="{{ asset('images/' . $product->thumbnail) }}" alt="{{ $product->proName }}">
+                        @endif
                     </div>
                 </div>
                 <div class="col-7">
@@ -70,7 +72,9 @@ NL SHOPPING
                                 </div>
                                 @endif
                                 <a href="{{route('product',$value->id)}}">
-                                    <img src="{{url('images/',$value->thumbnail)}}" alt="">
+                                    @if (filled($value->thumbnail))
+                                        <img src="{{ asset('images/' . $value->thumbnail) }}" alt="{{ $value->proName }}">
+                                    @endif
                                 </a>
                             </div>
                             <div class="detail">

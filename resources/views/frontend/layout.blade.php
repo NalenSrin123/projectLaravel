@@ -3,18 +3,20 @@
     <head>
         <title>@yield('title')</title>
         <meta charset="UTF-8">
-        <link class="border-rounded" rel="icon" href="logo.jpg">
+        <link class="border-rounded" rel="icon" href="{{ asset('logo.jpg') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="{{ url('css/frontend/theme.css') }}" rel="stylesheet">
-        <link href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/frontend/theme.css') }}" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
         <header>
             <div class="container">
                 <div class="logo">
                     <a href="{{route('getall')}}">
-                        <img width="80px" height="80px" src="{{url('images/',$logo[0]->thumbnail)}}"  class="rounded-circle">
+                        @if (filled($logo->first()?->thumbnail))
+                            <img width="80" height="80" src="{{ asset('images/' . $logo->first()->thumbnail) }}" class="rounded-circle" alt="Logo">
+                        @endif
 
                     </a>
                 </div>
@@ -33,7 +35,7 @@
                     <form action="{{route('search-product')}}" method="get">
                         <input type="text" name="search" class="box" placeholder="SEARCH HERE">
                         <button>
-                            <div style="background-image: url(search.png);
+                            <div style="background-image: url('{{ asset('search.png') }}');
                                         width: 28px;
                                         height: 28px;
                                         background-position: center;
@@ -55,5 +57,5 @@
         </footer>
 
     </body>
-    <script src="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </html>

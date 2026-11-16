@@ -22,7 +22,9 @@
                                     </div>
                                     @endif
                                     <a href="{{route('product',$value->id)}}">
-                                        <img src="{{url('images/',$value->thumbnail)}}" alt="">
+                                        @if (filled($value->thumbnail))
+                                            <img src="{{ asset('images/' . $value->thumbnail) }}" alt="{{ $value->proName }}">
+                                        @endif
                                     </a>
                                 </div>
                                 <div class="detail">

@@ -25,7 +25,9 @@
 
                     <td>
                       <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                         <img src="{{url('images/',$item->thumbnail)}}" alt="Avatar" style="width: 80px; height: 80px; border-radius: 50px" >
+                         @if (filled($item->thumbnail))
+                           <img src="{{ asset('images/' . $item->thumbnail) }}" alt="Logo" style="width: 80px; height: 80px; border-radius: 50px">
+                         @endif
                       </ul>
                     </td>
                     <td><span class="badge bg-label-primary me-1">Active</span></td>

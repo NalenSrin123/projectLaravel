@@ -22,7 +22,9 @@
                                 <div class="mb-3 col-12">
                                     <label for="formFile" class="form-label">Image</label>
                                     <input class="form-control" type="file" name="image" />
-                                    <img class="mt-2"  width="80px" src="{{url('images/',$news->image)}}" alt="">
+                                    @if (filled($news->image))
+                                        <img class="mt-2" width="80" src="{{ asset('images/' . $news->image) }}" alt="{{ $news->title }}">
+                                    @endif
                                     <input name="old_image" type="hidden" value="{{$news->image}}">
 
                                 </div>

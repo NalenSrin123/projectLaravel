@@ -22,7 +22,7 @@
                                 <div class="mb-3 col-12">
                                         <label for="profile">Profile</label>
                                         <input type="file" name="profile" id="" class="form-control">
-                                        <img class="mt-2"  width="80px" src="{{url('images/',$user->profile)}}" alt="">
+                                        <img class="mt-2" width="80" src="{{ filled($user->profile) ? asset('images/' . $user->profile) : asset('backend/img/avatars/1.png') }}" alt="Profile">
                                         <input name="old_image" type="hidden" value="{{$user->profile}}">
 
                                 </div>

@@ -17,8 +17,6 @@ fi
 
 php artisan config:cache
 
-echo "Starting Laravel HTTP server..."
+echo "Starting FrankenPHP..."
 
-exec php artisan serve \
-    --host=0.0.0.0 \
-    --port="${PORT:-10000}"
+exec frankenphp run --config /etc/caddy/Caddyfile

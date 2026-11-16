@@ -93,7 +93,9 @@
                                 <div class="mb-3 col-6">
                                     <label for="formFile" class="form-label text-danger">Recommend image size ..x.. pixels.</label>
                                     <input class="form-control" type="file" name="thumbnail" />
-                                    <img width="80" src="{{url('images/',$product->thumbnail)}}" alt="">
+                                    @if (filled($product->thumbnail))
+                                        <img width="80" src="{{ asset('images/' . $product->thumbnail) }}" alt="{{ $product->proName }}">
+                                    @endif
                                     <input type="hidden" name="old_img" id="" value="{{$product->thumbnail}}">
 
                                 </div>
