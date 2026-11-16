@@ -113,6 +113,19 @@ footer span {
 .home figure .thumbnail img {
     width: 100%;
 }
+.home figure .thumbnail,
+.shop:not(.news-blog) figure .thumbnail,
+.product-detail figure .thumbnail {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background-color: var(--gray);
+}
+.home figure .thumbnail img,
+.shop:not(.news-blog) figure .thumbnail img,
+.product-detail figure .thumbnail img {
+    height: 100%;
+    object-fit: cover;
+}
 .shop figure .thumbnail img:hover ,
 .product-detail figure .thumbnail img:hover ,
 .home figure .thumbnail img:hover {
