@@ -14,9 +14,9 @@ class ProductSeeder extends Seeder
         $userId = User::where('email', 'admin@example.com')->value('id');
         $categories = Category::pluck('id', 'name');
         $thumbnails = [
-            'Men' => '1718590192-Polo-Shirt (1).jpg',
-            'Women' => '1718763124-Crop-Hoodie (3)-cr-450x672.jpg',
-            'Unisex' => '1718763088-Hoodie (2).jpg',
+            'Men' => 'product-boy.png',
+            'Women' => 'product-girl.png',
+            'Unisex' => 'product-boy.png',
         ];
 
         $products = [

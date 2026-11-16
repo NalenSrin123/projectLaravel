@@ -16,7 +16,7 @@ class NewsSeeder extends Seeder
         ];
 
         foreach ($articles as $article) {
-            news::updateOrCreate(['title' => $article['title']], $article + ['image' => '']);
+            news::updateOrCreate(['title' => $article['title']], $article + ['image' => 'news-placeholder.png']);
         }
     }
 }
