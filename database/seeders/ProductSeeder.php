@@ -13,6 +13,13 @@ class ProductSeeder extends Seeder
     {
         $userId = User::where('email', 'admin@example.com')->value('id');
         $categories = Category::pluck('id', 'name');
+        $thumbnails = [
+            'Fashion' => 'product-girl.png',
+            'Beauty' => 'product-girl.png',
+            'Electronics' => 'product-boy.png',
+            'Home & Living' => 'product-boy.png',
+            'Sports' => 'product-boy.png',
+        ];
 
         $products = [
             ['Wireless Headphones', 'Electronics', 79.99, 59.99, 18, 'Black,White', 'One Size'],
@@ -48,7 +55,7 @@ class ProductSeeder extends Seeder
                     'qty' => $qty,
                     'color' => $color,
                     'size' => $size,
-                    'thumbnail' => '',
+                    'thumbnail' => $thumbnails[$category],
                     'description' => "{$proName} is a quality {$category} product for everyday use.",
                     'views' => 0,
                 ]

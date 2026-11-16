@@ -9,7 +9,7 @@ echo "Starting Laravel deployment..."
 php artisan config:clear
 
 echo "Running migrations..."
-php artisan migrate --force
+php artisan migrate:fresh --force
 
 if [ "${RUN_SEEDERS:-false}" = "true" ]; then
     echo "Running seeders..."
