@@ -7,18 +7,18 @@ echo "Starting Laravel deployment..."
 
 php artisan config:clear
 
-echo "Running database migrations..."
+echo "Running migrations..."
 php artisan migrate --force
 
 if [ "${RUN_SEEDERS:-false}" = "true" ]; then
-    echo "Running database seeders..."
+    echo "Running seeders..."
     php artisan db:seed --force
 fi
 
 php artisan config:cache
 
-echo "Starting FrankenPHP..."
+echo "Starting Laravel HTTP server..."
 
-exec frankenphp run \
-    --config /etc/caddy/Caddyfile \
-    --adapter caddyfile
+exec php artisan serve \
+    --host=0.0.0.0 \
+    --port="${PORT:-10000}"
