@@ -109,6 +109,7 @@ Route::controller(FrontendUserController::class)->group(function(){
     Route::post('/frontend-login-submit','FrontendLoginSubmit')->name('frontend-login-submit');
     Route::get('/frontend-register','FrontendRegister')->name('frontend-register');
     Route::post('/frontend-register-submit','FrontendRegisterSubmit')->name('frontend-register-submit');
+    Route::post('/frontend-logout','FrontendLogout')->name('frontend-logout');
 });
 Route::get('/news',function(){
     return view('frontend.news');

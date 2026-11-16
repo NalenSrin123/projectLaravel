@@ -45,7 +45,14 @@
                             "></div>
                         </button>
                     </form>
-                    <a href="{{route('frontend-login')}}" class="btn btn-primary">LOGIN</a>
+                    @auth
+                        <form action="{{ route('frontend-logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-outline-primary">LOGOUT</button>
+                        </form>
+                    @else
+                        <a href="{{ route('frontend-register') }}" class="btn btn-primary">SIGN UP</a>
+                    @endauth
                 </div>
             </div>
         </header>

@@ -49,4 +49,13 @@ class userController extends Controller
         }
     }
 
+    public function FrontendLogout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('getall');
+    }
+
 }
