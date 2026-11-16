@@ -2,7 +2,7 @@
 @section('title')
     Register
 @endsection
-<style>
+{{-- <style>
     .container-fluid{
         height: 100vh;
         background-image: url('back1.jpg');
@@ -12,7 +12,7 @@
         align-items: center;
         justify-content: center;
     }
-</style>
+</style> --}}
 @section('content')
 
 <div class="container-fluid">
