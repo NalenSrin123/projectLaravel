@@ -1,4 +1,4 @@
-@extends('backend.master-login-register')
+@extends('Backend.master-login-register')
 @section('title')
     Login
 @endsection
