@@ -10,10 +10,10 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-9">
+                <div class="col-12 col-lg-9">
                     <div class="row">
                         @foreach ($products as $value)
-                        <div class="col-4">
+                        <div class="col-12 col-sm-6 col-lg-4">
                             <figure>
                                 <div class="thumbnail">
                                     @if ($value->regular_price!=0)
@@ -42,7 +42,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-3 filter">
+                <div class="col-12 col-lg-3 filter mt-4 mt-lg-0">
                     <h4 class="title">Category</h4>
                     <ul>
                         <li>

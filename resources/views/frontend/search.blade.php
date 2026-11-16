@@ -15,7 +15,7 @@
                 </div>
                 <div class="row">
                     @foreach ($products as $value)
-                    <div class="col-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                         <figure>
                             <div class="thumbnail">
                                 @if ($value->regular_price!=0)

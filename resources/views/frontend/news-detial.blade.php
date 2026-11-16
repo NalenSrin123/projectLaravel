@@ -7,12 +7,13 @@ NL SHOPPING
 <style>
     .shop.news-blog .review .container .image{
         /* background-color: red; */
-        width: 500px;
-        height: 400px;
+        width: 100%;
+        aspect-ratio: 5 / 4;
     }
     .shop.news-blog .review .container .image img{
         width: 100%;
         height: 100%;
+        object-fit: cover;
     }
     .shop.news-blog .review .container .detail{
         display: flex;
@@ -25,14 +26,14 @@ NL SHOPPING
     <section class="review">
         <div class="container">
             <div class="row">
-                <div class="col-5">
+                <div class="col-12 col-md-5">
                     <div class="image">
                         @if (filled($news->image))
                             <img src="{{ asset('images/' . $news->image) }}" alt="{{ $news->title }}">
                         @endif
                     </div>
                 </div>
-                <div class="col-7">
+                <div class="col-12 col-md-7">
                     <div class="detail">
                         <h3 class="title">{{$news->title}}</h3>
                         <div class="group-size">
@@ -58,7 +59,7 @@ NL SHOPPING
             </div>
             <div class="row">
                 @foreach ($relateNews as $item)
-                <div class="col-3">
+                <div class="col-12 col-sm-6 col-lg-3">
                     <figure>
                         <div class="thumbnail">
                             <a href="{{route('news-detail',$item->id)}}">

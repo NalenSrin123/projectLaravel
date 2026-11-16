@@ -14,34 +14,27 @@ class ProductSeeder extends Seeder
         $userId = User::where('email', 'admin@example.com')->value('id');
         $categories = Category::pluck('id', 'name');
         $thumbnails = [
-            'Fashion' => 'product-girl.png',
-            'Beauty' => 'product-girl.png',
-            'Electronics' => 'product-boy.png',
-            'Home & Living' => 'product-boy.png',
-            'Sports' => 'product-boy.png',
+            'Men' => '1718590192-Polo-Shirt (1).jpg',
+            'Women' => '1718763124-Crop-Hoodie (3)-cr-450x672.jpg',
+            'Unisex' => '1718763088-Hoodie (2).jpg',
         ];
 
         $products = [
-            ['Wireless Headphones', 'Electronics', 79.99, 59.99, 18, 'Black,White', 'One Size'],
-            ['Bluetooth Speaker', 'Electronics', 49.99, 39.99, 24, 'Black,Blue', 'One Size'],
-            ['USB-C Charging Cable', 'Electronics', 14.99, 9.99, 60, 'White,Black', '1m,2m'],
-            ['Smart LED Bulb', 'Electronics', 19.99, 15.99, 35, 'White', 'One Size'],
-            ['Wireless Mouse', 'Electronics', 29.99, 22.99, 30, 'Black,Grey', 'One Size'],
-            ['Classic Cotton T-Shirt', 'Fashion', 24.99, 19.99, 45, 'Black,White,Navy', 'S,M,L,XL'],
-            ['Slim Fit Jeans', 'Fashion', 49.99, 39.99, 28, 'Blue,Black', 'S,M,L,XL'],
-            ['Canvas Sneakers', 'Fashion', 54.99, 44.99, 22, 'White,Black', '38,39,40,41,42'],
-            ['Everyday Backpack', 'Fashion', 39.99, 31.99, 20, 'Black,Grey', 'One Size'],
-            ['Summer Cap', 'Fashion', 18.99, 14.99, 40, 'Beige,Black,Blue', 'One Size'],
-            ['Ceramic Coffee Mug', 'Home & Living', 12.99, 9.99, 50, 'White,Grey', '350ml'],
-            ['Soft Throw Pillow', 'Home & Living', 22.99, 17.99, 32, 'Beige,Grey,Green', '45x45cm'],
-            ['Bamboo Cutting Board', 'Home & Living', 27.99, 21.99, 25, 'Natural', 'Medium,Large'],
-            ['Desk Organizer', 'Home & Living', 19.99, 15.99, 30, 'White,Black', 'One Size'],
-            ['Scented Candle', 'Home & Living', 16.99, 12.99, 36, 'Cream', '200g'],
-            ['Daily Face Cleanser', 'Beauty', 15.99, 12.99, 42, 'Clear', '150ml'],
-            ['Hydrating Body Lotion', 'Beauty', 18.99, 14.99, 38, 'White', '250ml'],
-            ['Matte Lipstick', 'Beauty', 13.99, 10.99, 55, 'Red,Nude,Pink', 'One Size'],
-            ['Yoga Mat', 'Sports', 34.99, 27.99, 26, 'Purple,Blue,Black', '6mm'],
-            ['Stainless Water Bottle', 'Sports', 21.99, 16.99, 48, 'Silver,Black,Blue', '750ml'],
+            ['Classic Cotton T-Shirt', 'Men', 24.99, 19.99, 45, 'Black,White,Navy', 'S,M,L,XL'],
+            ['Essential Polo Shirt', 'Men', 29.99, 24.99, 32, 'Black,White,Blue', 'S,M,L,XL'],
+            ['Relaxed Fit Hoodie', 'Men', 49.99, 39.99, 20, 'Black,Grey,Olive', 'S,M,L,XL'],
+            ['Slim Fit Jeans', 'Men', 54.99, 44.99, 28, 'Blue,Black', 'S,M,L,XL'],
+            ['Classic Oxford Shirt', 'Men', 39.99, 34.99, 24, 'White,Light Blue', 'S,M,L,XL'],
+            ['Crop Hoodie', 'Women', 44.99, 36.99, 26, 'Pink,Cream,Black', 'XS,S,M,L'],
+            ['Ribbed Long Sleeve Top', 'Women', 27.99, 22.99, 38, 'White,Black,Brown', 'XS,S,M,L'],
+            ['Everyday T-Shirt Dress', 'Women', 34.99, 28.99, 30, 'Black,Beige,Green', 'XS,S,M,L'],
+            ['High-Waist Wide Leg Jeans', 'Women', 59.99, 49.99, 22, 'Light Blue,Dark Blue', 'XS,S,M,L'],
+            ['Oversized Sweatshirt', 'Women', 42.99, 35.99, 25, 'Grey,Cream,Lilac', 'XS,S,M,L'],
+            ['Unisex Oversized Hoodie', 'Unisex', 52.99, 42.99, 35, 'Black,Grey,Beige', 'XS,S,M,L,XL'],
+            ['Unisex Graphic T-Shirt', 'Unisex', 26.99, 21.99, 50, 'White,Black,Charcoal', 'XS,S,M,L,XL'],
+            ['Unisex Zip-Up Jacket', 'Unisex', 64.99, 54.99, 18, 'Black,Navy,Khaki', 'XS,S,M,L,XL'],
+            ['Unisex Fleece Joggers', 'Unisex', 38.99, 31.99, 30, 'Black,Grey,Olive', 'XS,S,M,L,XL'],
+            ['Unisex Crewneck Sweatshirt', 'Unisex', 39.99, 32.99, 34, 'Cream,Grey,Blue', 'XS,S,M,L,XL'],
         ];
 
         foreach ($products as [$proName, $category, $regularPrice, $salePrice, $qty, $color, $size]) {

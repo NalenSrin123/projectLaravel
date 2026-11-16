@@ -145,7 +145,7 @@ background-color: #4285f4;
 
                   <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Your products</h3>
 
-                  <div class="d-flex align-items-center mb-5">
+                  <div class="d-flex flex-column flex-sm-row align-items-sm-center mb-5 gap-3">
                     <div class="flex-shrink-0">
                       @if (filled($product->thumbnail))
                         <img src="{{ asset('images/' . $product->thumbnail) }}"
@@ -157,7 +157,7 @@ background-color: #4285f4;
                       <h5 class="text-primary">{{$product->proName}}</h5>
                       <h6 style="color: #9e9e9e;">Color:{{$product->color}}</h6>
                       <p class="fw-bold mb-0 me-5 pe-3">Reqular Price : $ {{$product->regular_price}}</p>
-                      <div class="d-flex align-items-center">
+                      <div class="d-flex flex-wrap align-items-center gap-2">
 
                         <p class="fw-bold mb-0 me-5 pe-3">Sale Price : $ {{$product->sale_price}}</p>
                         <form action="" method="POST">
@@ -193,13 +193,13 @@ background-color: #4285f4;
 
                   <form action="{{route('buy-product-submit',$product->id)}}" class="mb-5" method="post">
                     @csrf
-                    <div class="row" style="margin-left: 200px">
-                        <img src="{{ asset('code.jpg') }}" alt="Payment QR code" style="width: 200px;">
+                    <div class="d-flex justify-content-center">
+                        <img src="{{ asset('code.jpg') }}" alt="Payment QR code" class="img-fluid" style="max-width: 200px;">
                     </div>
 
-                    <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block btn-lg"  class="btn right-auto" style="margin-left: 400px; margin-top: 50px">Buy now</button>
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg d-block mx-auto mt-5">Buy now</button>
 
-                    <h5 class="fw-bold mb-5" style="position: absolute; bottom: 0; right: 70px;">
+                    <h5 class="fw-bold mt-4 text-center">
                       <a href="{{route('product',$product->id)}}"><i class="fas fa-angle-left me-2 "></i>Back to shopping</a>
                     </h5>
 

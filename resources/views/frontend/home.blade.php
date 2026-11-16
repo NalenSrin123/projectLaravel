@@ -15,7 +15,7 @@
                 </div>
                 <div class="row">
                     @foreach ($product as $value)
-                    <div class="col-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                         <figure>
                             <div class="thumbnail">
                                 @if ($value->regular_price!=0)
@@ -58,7 +58,7 @@
                 <div class="row">
                     @foreach ($promotion as $value)
 
-                        <div class="col-3">
+                        <div class="col-12 col-sm-6 col-lg-3">
                             <figure>
                                 <div class="thumbnail">
 
@@ -100,7 +100,7 @@
                 </div>
                 <div class="row">
                     @foreach ($popular as $value)
-                    <div class="col-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                         <figure>
                             <div class="thumbnail">
                                 @if ($value->regular_price!=0)

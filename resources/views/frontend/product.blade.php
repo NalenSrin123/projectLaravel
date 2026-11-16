@@ -8,14 +8,14 @@ NL SHOPPING
     <section class="review">
         <div class="container">
             <div class="row">
-                <div class="col-5">
+                <div class="col-12 col-md-5">
                     <div class="thumbnail">
                         @if (filled($product->thumbnail))
                             <img src="{{ asset('images/' . $product->thumbnail) }}" alt="{{ $product->proName }}">
                         @endif
                     </div>
                 </div>
-                <div class="col-7">
+                <div class="col-12 col-md-7">
                     <div class="detail">
                         <div class="price-list">
                             <div class="price d-none">US 30.5</div>
@@ -63,7 +63,7 @@ NL SHOPPING
             </div>
             <div class="row">
                 @foreach ($relateProduct as $value )
-                    <div class="col-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                         <figure>
                             <div class="thumbnail">
                                 @if ($value->regular_price!=0)

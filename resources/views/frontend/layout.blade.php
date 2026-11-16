@@ -52,7 +52,7 @@
         @yield('content')
         <footer>
             <span>
-                AllRight Recieved @ 2023
+                AllRight Recieved &copy; 2026 <a href="{{route('getall')}}">NL SHOPPING</a>
             </span>
         </footer>
 

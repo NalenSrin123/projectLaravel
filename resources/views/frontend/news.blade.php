@@ -15,7 +15,7 @@
                 </div>
                 <div class="row">
                     @foreach ($allNews as $item)
-                    <div class="col-3">
+                    <div class="col-12 col-sm-6 col-lg-3">
                         <figure>
                             <div class="thumbnail">
                                 <a href="{{route('news-detail',$item->id)}}">
